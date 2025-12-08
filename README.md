@@ -30,6 +30,3 @@ This repo contains a simple demo webpage (`index.html`) that showcases the UI fl
 1. If GitHub Pages is enabled, open the site URL: `https://yourusername.github.io/smart-id-assistive-mode/`  
 2. Or open `index.html` locally in a browser.
 
-## Team & Contact
-Sin Yee — sinyee@example.com
-
