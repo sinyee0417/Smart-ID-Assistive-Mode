@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart ID Assistive Mode — Demo</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:0; padding:0; background:#f6f8fb; color:#222; }
+    header{background:#0b66ff; color:white; padding:28px 20px; text-align:center}
+    .container{max-width:980px;margin:20px auto;padding:18px}
+    .card{background:white;border-radius:12px;padding:18px;margin:12px 0;box-shadow:0 6px 20px rgba(15,20,30,0.06)}
+    h1{margin:0;font-size:20px}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .col{flex:1;min-width:260px}
+    .big-btn{display:inline-block;padding:18px 22px;border-radius:12px;background:#0b66ff;color:white;font-weight:600;text-decoration:none}
+    .screenshot{width:100%;border-radius:8px;border:1px solid #e6e9ef}
+    footer{font-size:13px;color:#666;text-align:center;margin:18px}
+    ul{margin:8px 0 0 18px}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Smart ID Assistive Mode — Demo</h1>
+    <div style="margin-top:6px">Digital Identity for All</div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>What this demo shows</h2>
+      <p>This page is a lightweight prototype demonstrating the Assistive Mode concept: auto-adapting UI after tapping a Smart ID at a kiosk.</p>
+      <div class="row" style="margin-top:12px">
+        <div class="col">
+          <div class="card">
+            <h3>Key Features</h3>
+            <ul>
+              <li>Large text & buttons</li>
+              <li>Icon-based navigation</li>
+              <li>Voice instruction placeholders (BM/Chinese/Tamil)</li>
+              <li>Gesture-friendly UI</li>
+              <li>Offline-ready for rural kiosks</li>
+            </ul>
+            <a class="big-btn" href="#flow">See UI Flow</a>
+          </div>
+        </div>
+        <div class="col">
+          <img class="screenshot" src="assets/mockup-1.png" alt="Mockup 1 (replace with your screenshot)" />
+        </div>
+      </div>
+    </div>
+
+    <div id="flow" class="card">
+      <h2>UI Flow (walkthrough)</h2>
+      <ol>
+        <li>User taps Smart ID — system detects profile flags (e.g., senior, low vision)</li>
+        <li>Assistive Mode loads: large buttons + icon menu</li>
+        <li>Voice guidance starts in preferred language (demo uses text placeholders)</li>
+        <li>User completes service — printed receipt or confirmation shown</li>
+      </ol>
+      <p>Replace the images in <code>/assets</code> with your design screens (PNG/JPG).</p>
+    </div>
+
+    <div class="card">
+      <h2>Next steps</h2>
+      <p>To complete the submission: add real mockups into <code>/assets</code>, update the README with your demo video link (YouTube unlisted or hosted), and enable GitHub Pages (Settings → Pages → main branch → Save).</p>
+    </div>
+
+    <footer>
+      Built by Team 04 Peeps — Smart ID Assistive Mode. Replace contact email & assets before submission.
+    </footer>
+  </div>
+</body>
+</html>
