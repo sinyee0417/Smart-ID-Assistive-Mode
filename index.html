@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart ID Assistive Mode — Inclusive Digital Identity</title>
+  <title>Smart ID Assistive Mode — Demo</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,24 +12,52 @@
       background: #ffffff;
       color: #002b5c;
       line-height: 1.6;
+      transition: 0.3s;
     }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.1s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     header {
       background: #002b5c;
       color: white;
-      padding: 70px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
-    header img.logo {
-      width: 120px;
-      margin-bottom: 20px;
-    }
     header h1 {
-      font-size: 40px;
+      font-size: 36px;
       margin-bottom: 10px;
     }
     header p {
-      font-size: 20px;
+      font-size: 18px;
       opacity: 0.9;
+    }
+
+    /* Language button */
+    .lang-switch {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: #0066cc;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: 0.3s;
+      z-index: 1000;
+    }
+    .lang-switch:hover {
+      background: #004a99;
+      transform: scale(1.05);
     }
 
     section {
@@ -37,10 +65,9 @@
       margin: auto;
       padding: 40px 20px;
     }
-
     h2 {
       text-align: center;
-      font-size: 30px;
+      font-size: 28px;
       margin-bottom: 25px;
       color: #003b78;
     }
@@ -54,6 +81,10 @@
       width: 100%;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.03);
     }
 
     .features ul {
@@ -63,8 +94,9 @@
     }
     .features li {
       margin-bottom: 12px;
-      padding-left: 25px;
+      padding-left: 20px;
       position: relative;
+      transition: 0.3s;
     }
     .features li::before {
       content: "✔";
@@ -73,87 +105,143 @@
       color: #0066cc;
       font-weight: bold;
     }
-
-    .team {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .team-card {
-      background: #f2f6fa;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      width: 250px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-    }
-    .team-card img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin-bottom: 10px;
+    .features li:hover {
+      transform: translateX(5px);
+      color: #004a99;
     }
 
     footer {
       background: #002b5c;
       color: white;
       text-align: center;
-      padding: 30px;
+      padding: 20px;
       font-size: 14px;
       margin-top: 40px;
     }
+
+    .cn, .bm { display: none; }
   </style>
+
+  <script>
+    function switchLanguage() {
+      const languages = ["en", "cn", "bm"];
+      const btn = document.getElementById('langBtn');
+      const current = btn.getAttribute("data-lang");
+
+      let nextIndex = (languages.indexOf(current) + 1) % languages.length;
+      let nextLang = languages[nextIndex];
+
+      document.querySelectorAll('.en').forEach(e => e.style.display = nextLang === 'en' ? 'block' : 'none');
+      document.querySelectorAll('.cn').forEach(e => e.style.display = nextLang === 'cn' ? 'block' : 'none');
+      document.querySelectorAll('.bm').forEach(e => e.style.display = nextLang === 'bm' ? 'block' : 'none');
+
+      btn.setAttribute("data-lang", nextLang);
+      btn.innerText = nextLang === 'en' ? '中文' : nextLang === 'cn' ? 'BM' : 'English';
+    }
+  </script>
 </head>
+
 <body>
-  <header>
-    <img src="assets/team-logo.png" alt="Team Logo" class="logo" />
-    <h1>Smart ID Assistive Mode</h1>
-    <p>Inclusive Digital Identity — Accessible for Every Malaysian</p>
+  <div class="lang-switch" id="langBtn" data-lang="en" onclick="switchLanguage()">中文</div>
+
+  <header class="fade-in">
+    <h1 class="en">Smart ID Assistive Mode</h1>
+    <p class="en">Digital Identity for All — Accessible, Inclusive, Empowering</p>
+
+    <h1 class="cn">智慧身份辅助模式</h1>
+    <p class="cn">打造人人都能使用的数字身份体验</p>
+
+    <h1 class="bm">Mod Bantuan Smart ID</h1>
+    <p class="bm">Identiti Digital Untuk Semua — Mudah, Aksesibel & Inklusif</p>
   </header>
 
-  <section>
-    <h2>About the Project</h2>
-    <p>
-      Smart ID Assistive Mode aims to ensure that every Malaysian — including seniors, persons with disabilities, low-literacy users, and rural communities — can interact with Smart ID services safely, comfortably, and independently. Our Assistive Mode uses voice guidance, large-button UI, multi-language support, and gesture-based controls to create a seamless, inclusive experience.
+  <!-- ABOUT -->
+  <section class="fade-in">
+    <h2 class="en">About the Project</h2>
+    <h2 class="cn">项目简介</h2>
+    <h2 class="bm">Tentang Projek</h2>
+
+    <p class="en">
+      Smart ID Assistive Mode enhances national digital identity accessibility by supporting seniors,
+      low-literacy individuals, people with disabilities, and rural communities.
+    </p>
+
+    <p class="cn">
+      智慧身份辅助模式专为乐龄人士、低识字用户、残障群体与乡区居民设计，提升数字身份服务的可用性与便利度。
+    </p>
+
+    <p class="bm">
+      Mod Bantuan Smart ID memastikan warga emas, pengguna berliterasi rendah, OKU dan komuniti luar bandar
+      dapat menggunakan identiti digital dengan lebih mudah.
     </p>
   </section>
 
-  <section>
-    <h2>UI Mockup Gallery</h2>
+  <!-- GALLERY -->
+  <section class="fade-in">
+    <h2 class="en">UI Mockup Gallery</h2>
+    <h2 class="cn">界面原型展示</h2>
+    <h2 class="bm">Galeri Reka Bentuk UI</h2>
+
     <div class="gallery">
-      <img src="mockup-1.png" alt="Mockup 1" />
-      <img src="mockup-2.png" alt="Mockup 2" />
-      <img src="mockup-3.png" alt="Mockup 3" />
-      <img src="mockup-4.png" alt="Mockup 4" />
-      <img src="mockup-5.png" alt="Mockup 5" />
+      <img src="assets/mockup-1.png" alt="Mockup 1" />
+      <img src="assets/mockup-2.png" alt="Mockup 2" />
+      <img src="assets/mockup-3.png" alt="Mockup 3" />
+      <img src="assets/mockup-4.png" alt="Mockup 4" />
+      <img src="assets/mockup-5.png" alt="Mockup 5" />
     </div>
   </section>
 
-  <section class="features">
-    <h2>Key Features</h2>
-    <ul>
-      <li>Large-text and large-button interface for seniors</li>
-      <li>Icon‑based menu navigation for low-literacy communities</li>
-      <li>Multi-language voice and text support: English, BM, 中文, தமிழ்</li>
-      <li>Built‑in screen reader and voice instruction mode</li>
-      <li>Gesture‑based controls for motor disabilities</li>
-      <li>Instant activation via Smart ID tap — no login needed</li>
-      <li>Offline‑ready for rural digital kiosks</li>
+  <!-- FEATURES -->
+  <section class="features fade-in">
+    <h2 class="en">Key Features</h2>
+    <h2 class="cn">核心功能</h2>
+    <h2 class="bm">Ciri Utama</h2>
+
+    <ul class="en">
+      <li>Large text & buttons for seniors</li>
+      <li>Icon-based menus for low literacy users</li>
+      <li>Multi-language support</li>
+      <li>Screen reader voice guidance</li>
+      <li>Gesture navigation for motor disabilities</li>
+      <li>One-tap activation</li>
+      <li>Offline-ready for rural areas</li>
+    </ul>
+
+    <ul class="cn">
+      <li>大字体、大按钮设计</li>
+      <li>图标式操作界面</li>
+      <li>多语言支持</li>
+      <li>语音朗读与语音导航</li>
+      <li>手势操作模式</li>
+      <li>一触即用，无需登录</li>
+      <li>支持离线使用，适合乡区</li>
+    </ul>
+
+    <ul class="bm">
+      <li>Teks besar & butang besar</li>
+      <li>Menu berasaskan ikon</li>
+      <li>Sokongan pelbagai bahasa</li>
+      <li>Navigasi suara pembaca skrin</li>
+      <li>Navigasi berasaskan gerakan tangan</li>
+      <li>Aktif dengan satu sentuhan</li>
+      <li>Mesra luar bandar (tanpa internet)</li>
     </ul>
   </section>
 
-  <section>
-    <h2>User Flow</h2>
-    <p>
-      1️⃣ Tap Smart ID → 2️⃣ System detects accessibility needs → 3️⃣ Assistive Mode loads → 4️⃣ User follows large‑button or voice‑guided prompts → 5️⃣ Service completed successfully.
-    </p>
+  <!-- FLOW -->
+  <section class="fade-in">
+    <h2 class="en">User Flow</h2>
+    <h2 class="cn">用户流程</h2>
+    <h2 class="bm">Aliran Pengguna</h2>
+
+    <p class="en">1️⃣ Tap Smart ID → 2️⃣ System detects needs → 3️⃣ Assistive UI loads → 4️⃣ Guided steps → 5️⃣ Completed</p>
+    <p class="cn">1️⃣ 轻触 Smart ID → 2️⃣ 系统侦测需求 → 3️⃣ 载入辅助界面 → 4️⃣ 按指示操作 → 5️⃣ 完成服务</p>
+    <p class="bm">1️⃣ Sentuh Smart ID → 2️⃣ Sistem mengesan keperluan → 3️⃣ UI bantuan muncul → 4️⃣ Ikut panduan → 5️⃣ Selesai</p>
   </section>
 
   <footer>
-    Smart ID Assistive Mode — Team 04 Peeps | Inclusivity Track | GODAM LAH! 2.0: Smart ID Hackathon 2025
+    Smart ID Assistive Mode — Team 04 Peeps | Inclusivity Track Hackathon 2025
   </footer>
+
 </body>
 </html>
-
