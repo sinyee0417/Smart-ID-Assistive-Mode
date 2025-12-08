@@ -1,149 +1,126 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart ID Assistive Mode — Demo</title>
   <style>
-    :root{
-      --blue:#0b66ff; --muted:#6b7280; --card:#ffffff; --bg:#f6f8fb;
-      --radius:14px; --max:960px;
-      --accent-dark:#0447b5;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #002b5c;
+      line-height: 1.6;
     }
-    *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; margin:0; background:var(--bg); color:#111}
-    header{background:linear-gradient(0deg,var(--blue),var(--accent-dark)); color:#fff; padding:28px 18px; text-align:center}
-    header h1{margin:0;font-size:22px;letter-spacing:0.2px}
-    header p{margin:6px 0 0;font-size:14px;opacity:0.95}
-    .wrap{max-width:var(--max);margin:26px auto;padding:18px}
-    .hero{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-    .hero .left{flex:1;min-width:300px}
-    .hero .right{flex:1.05;min-width:280px}
-    .card{background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:0 8px 20px rgba(15,20,30,0.06);margin-bottom:16px}
-    h2{margin:0 0 10px;font-size:18px}
-    p.lead{margin:6px 0 0;color:var(--muted)}
-    .btn{display:inline-block;background:var(--blue);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:12px}
-    .screenshot{width:100%;height:auto;border-radius:10px;border:1px solid #eef1f6}
-    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
-    ul{margin:8px 0 0 18px;color:var(--muted)}
-    .gallery{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-    .thumb{width:calc(50% - 6px);min-width:220px}
-    .lang{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;background:#f1f6ff;color:var(--accent-dark);font-weight:600}
-    .small{font-size:13px;color:var(--muted)}
-    footer{max-width:var(--max);margin:30px auto 48px;text-align:center;color:var(--muted);font-size:13px}
-    @media (max-width:760px){
-      .grid{grid-template-columns:1fr}
-      .thumb{width:100%}
-      .features{grid-template-columns:1fr}
+    header {
+      background: #002b5c;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+    section {
+      max-width: 950px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: #003b78;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .features ul {
+      list-style: none;
+      padding: 0;
+      font-size: 18px;
+    }
+    .features li {
+      margin-bottom: 12px;
+      padding-left: 20px;
+      position: relative;
+    }
+    .features li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #0066cc;
+      font-weight: bold;
+    }
+    footer {
+      background: #002b5c;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Smart ID Assistive Mode</h1>
-    <p>Digital Identity for All — Assistive UI that activates when a citizen taps their Smart ID</p>
+    <p>Digital Identity for All — Inclusivity Through Accessible Design</p>
   </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="left card">
-        <h2>What is this demo?</h2>
-        <p class="lead">A lightweight prototype demonstrating Assistive Mode: the Smart ID ecosystem automatically switches to a simplified, voice-guided, icon-based UI for seniors, persons with disabilities, low-literacy users, and rural communities.</p>
+  <section>
+    <h2>About the Project</h2>
+    <p>
+      Smart ID Assistive Mode is designed to ensure every Malaysian — seniors, low-literacy users, persons with disabilities, and rural communities — can access Smart ID digital services confidently and independently. This demo showcases the interface screens of our proposed Assistive Mode.
+    </p>
+  </section>
 
-        <div style="margin-top:14px" class="small">
-          <div><span class="lang">EN</span> English &nbsp;&nbsp; <span class="lang">BM</span> Bahasa Melayu &nbsp;&nbsp; <span class="lang">中文</span> 中文 &nbsp;&nbsp; <span class="lang">தமிழ்</span> தமிழ்</div>
-        </div>
+  <section>
+    <h2>UI Mockup Gallery</h2>
+    <div class="gallery">
+      <img src="assets/mockup-1.png" alt="Mockup 1" />
+      <img src="assets/mockup-2.png" alt="Mockup 2" />
+      <img src="assets/mockup-3.png" alt="Mockup 3" />
+      <img src="assets/mockup-4.png" alt="Mockup 4" />
+      <img src="assets/mockup-5.png" alt="Mockup 5" />
+    </div>
+  </section>
 
-        <div style="margin-top:14px">
-          <a class="btn" href="#gallery">See UI Flow</a>
-        </div>
-      </div>
+  <section class="features">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Large text and large buttons for seniors</li>
+      <li>Icon-based menus for low literacy users</li>
+      <li>Multi-language support: English, BM, 中文, தமிழ்</li>
+      <li>Screen reader & voice instruction mode</li>
+      <li>Gesture-based navigation for motor disabilities</li>
+      <li>No login required — activate via Smart ID tap</li>
+      <li>Offline-ready for rural kiosks</li>
+    </ul>
+  </section>
 
-      <div class="right">
-        <div class="card">
-          <h2>Quick features</h2>
-          <div class="features">
-            <div>
-              <strong>Large buttons</strong>
-              <p class="small">Touch-friendly UI for mobility and vision challenges.</p>
-            </div>
-            <div>
-              <strong>Voice guidance</strong>
-              <p class="small">Multilingual prompts: BM / 中文 / தமிழ் / EN.</p>
-            </div>
-            <div>
-              <strong>Icon navigation</strong>
-              <p class="small">Low-literacy friendly flows using icons and minimal text.</p>
-            </div>
-            <div>
-              <strong>Offline-ready</strong>
-              <p class="small">Works on rural kiosks with limited connectivity.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>How it works</h2>
-          <ol style="margin:8px 0 0 18px;color:var(--muted)">
-            <li>Tap Smart ID at a kiosk or terminal.</li>
-            <li>System reads profile flags and loads Assistive Mode.</li>
-            <li>User follows large-button, icon-driven flow with voice prompts.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery" class="card">
-      <h2>UI Flow & Screenshots</h2>
-      <p class="small">Tap through the sample screens to see Language selection, Assistive Mode menu, voice instructions, and confirmation screens in EN / BM / 中文 / தமிழ்.</p>
-
-      <div class="gallery">
-        <div class="thumb card">
-          <img class="screenshot" src="assets/mockup-1.png" alt="Mockup 1 - Welcome / Insert Smart ID" />
-          <div style="padding-top:8px"><strong>Welcome</strong> — prompt to tap Smart ID</div>
-        </div>
-
-        <div class="thumb card">
-          <img class="screenshot" src="assets/mockup-2.png" alt="Mockup 2 - Language selection (EN BM 中文 தமிழ்)" />
-          <div style="padding-top:8px"><strong>Language</strong> — choose preferred language</div>
-        </div>
-
-        <div class="thumb card">
-          <img class="screenshot" src="assets/mockup-3.png" alt="Mockup 3 - Assistive Mode menu (large buttons & icon menu)" />
-          <div style="padding-top:8px"><strong>Assistive Mode</strong> — large buttons / icon menu</div>
-        </div>
-
-        <div class="thumb card">
-          <img class="screenshot" src="assets/mockup-4.png" alt="Mockup 4 - Voice instruction screen (multilingual prompts)" />
-          <div style="padding-top:8px"><strong>Voice Instruction</strong> — voice prompts & next action</div>
-        </div>
-
-        <div class="thumb card">
-          <img class="screenshot" src="assets/mockup-5.png" alt="Mockup 5 - Success screen (confirmation / receipt)" />
-          <div style="padding-top:8px"><strong>Success</strong> — completion and print/confirmation</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Demo video (optional)</h2>
-      <p class="small">Upload your 5-minute video to YouTube (Unlisted) and replace the iframe src below with your video ID.</p>
-      <div style="margin-top:8px">
-        <!-- Replace YOUR_VIDEO_ID with actual YouTube ID -->
-        <iframe width="100%" height="360" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Demo video" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Team & Contact</h2>
-      <p class="small"><strong>Team 04 Peeps</strong> — Sin Yee (presenter). Add other team members' names here.</p>
-      <p class="small">Hackathon Track: Inclusivity &nbsp; • &nbsp; Submission: Round 1</p>
-    </section>
-  </main>
+  <section>
+    <h2>User Flow</h2>
+    <p>
+      1️⃣ User taps Smart ID → 2️⃣ System detects needs → 3️⃣ Assistive UI loads → 4️⃣ User follows large-button or voice-guided steps → 5️⃣ Service completed smoothly.
+    </p>
+  </section>
 
   <footer>
-    Built for the Kolaxus Smart ID Challenge — Smart ID Assistive Mode • Digital Identity for All
+    Smart ID Assistive Mode — Team 04 Peeps | Inclusivity Track Hackathon 2025
   </footer>
 </body>
 </html>
