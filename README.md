@@ -13,6 +13,6 @@ Many Malaysians face barriers using digital government services: small text, com
 When a user taps their Smart ID at a kiosk or terminal, the system reads profile flags and automatically activates **Assistive Mode** — a simplified UI with:
 - Large text and large buttons  
 - Icon-based menus for low-literacy users  
-- Multilingual voice instructions (Bahasa Melayu, 中文, தமிழ், English)  
+- Multilingual voice instructions (Bahasa Melayu, 中文, English)  
 - Gesture-friendly navigation for motor-impaired users  
 - Offline-ready mode for rural kiosks
