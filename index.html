@@ -73,11 +73,12 @@
     }
 
     .gallery {
-      display: flex;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
     .gallery img {
-      width: 70%;
+      width: 100%;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
       transition: 0.3s;
@@ -118,9 +119,7 @@
       margin-top: 40px;
     }
 
-    /* Default: show English only */
     .cn, .bm { display: none; }
-    .en { display: block; }
   </style>
 
   <script>
@@ -164,29 +163,28 @@
 
     <p class="en">
       Smart ID Assistive Mode enhances national digital identity accessibility by supporting seniors,
-      low-literacy individuals, people with disabilities, and rural communities.
+      low-literacy individuals and people with disabilities.
     </p>
 
     <p class="cn">
-      智慧身份辅助模式专为乐龄人士、低识字用户、残障群体与乡区居民设计，提升数字身份服务的可用性与便利度。
+      智慧身份辅助模式专为乐龄人士，低识字用户与残障群体设计，提升数字身份服务的可用性与便利度。
     </p>
 
     <p class="bm">
-      Mod Bantuan Smart ID memastikan warga emas, pengguna berliterasi rendah, OKU dan komuniti luar bandar
+      Mod Bantuan Smart ID memastikan warga emas, pengguna berliterasi rendah dan OKU 
       dapat menggunakan identiti digital dengan lebih mudah.
     </p>
   </section>
 
-  <!-- GALLERY with 3 languages -->
+  <!-- GALLERY -->
   <section class="fade-in">
-    <h2 class="en">UI Mockup</h2>
-    <h2 class="cn">界面原型</h2>
-    <h2 class="bm">Reka Bentuk UI</h2>
+    <h2 class="en">UI Mockup Gallery</h2>
+    <h2 class="cn">界面原型展示</h2>
+    <h2 class="bm">Galeri Reka Bentuk UI</h2>
 
     <div class="gallery">
-      <img src="img-cn.png" class="cn" alt="Chinese Mockup" />
-      <img src="img-bm.png" class="bm" alt="Malay Mockup" />
-      <img src="img-en.png" class="en" alt="English Mockup" />
+      <img src="mockup-1.jpg" alt="Mockup 1" />
+      <img src="mockup-2.jpg" alt="Mockup 1" />
     </div>
   </section>
 
@@ -203,7 +201,6 @@
       <li>Screen reader voice guidance</li>
       <li>Gesture navigation for motor disabilities</li>
       <li>One-tap activation</li>
-      <li>Offline-ready for rural areas</li>
     </ul>
 
     <ul class="cn">
@@ -213,7 +210,6 @@
       <li>语音朗读与语音导航</li>
       <li>手势操作模式</li>
       <li>一触即用，无需登录</li>
-      <li>支持离线使用，适合乡区</li>
     </ul>
 
     <ul class="bm">
@@ -233,15 +229,14 @@
     <h2 class="cn">用户流程</h2>
     <h2 class="bm">Aliran Pengguna</h2>
 
-    <p class="en">1️⃣ Tap Smart ID → 2️⃣ System detects needs → 3️⃣ Assistive UI loads → 4️⃣ Guided steps → 5️⃣ Completed</p>
-    <p class="cn">1️⃣ 轻触 Smart ID → 2️⃣ 系统侦测需求 → 3️⃣ 载入辅助界面 → 4️⃣ 按指示操作 → 5️⃣ 完成服务</p>
-    <p class="bm">1️⃣ Sentuh Smart ID → 2️⃣ Sistem mengesan keperluan → 3️⃣ UI bantuan muncul → 4️⃣ Ikut panduan → 5️⃣ Selesai</p>
+    <p class="en">1️ 1. Tap Smart ID → 2. System detects needs → 3. Assistive UI loads → 4. Guided steps → 5. Completed</p>
+    <p class="cn">1️ 1. 轻触 Smart ID → 2. 系统侦测需求 → 3. 载入辅助界面 → 4. 按指示操作 → 5. 完成服务</p>
+    <p class="bm">1️ 1. Sentuh Smart ID → 2. Sistem mengesan keperluan → 3. UI bantuan muncul → 4. Ikut panduan → 5. Selesai</p>
   </section>
 
   <footer>
-    Smart ID Assistive Mode — Team 04 Peeps | Inclusivity Track Hackathon 2025
+    Smart ID Assistive Mode — Team 04 Peeps | Inclusivity Track | Smart ID Hackathon 2025
   </footer>
 
 </body>
 </html>
-
